@@ -2,7 +2,7 @@ counting = 0
 result = 0
 
 def measure():
-    with open("sonar_sweep.txt", "rt") as f:
+    with open("Advent_of_Code-assignment/2021-01/sonar_sweep.txt", "rt") as f:
         return [int(entry) for entry in f.readlines()]
 
 measurements = measure()
