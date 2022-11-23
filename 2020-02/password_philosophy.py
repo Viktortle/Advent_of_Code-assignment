@@ -3,7 +3,7 @@ def compile_list():
         return [entry for entry in f.readlines()]
 
 all_passwords = compile_list()
-possible_passwords = 0
+possible_passwords = []
 
 for i in range(len(all_passwords)):
     all_passwords[i] = all_passwords[i].split()
@@ -14,6 +14,19 @@ for i in range(len(all_passwords)):
 
 for entry in all_passwords:
     if entry[2].count(entry[1]) in range(int(entry[0][0]), int(entry[0][1])+1):
-        possible_passwords += 1
+        possible_passwords.append(entry)
 
-print(possible_passwords)
+print(len(possible_passwords))
+
+possible_passwords = []
+
+for entry in all_passwords:
+    if entry[2][int(entry[0][0])-1] == entry[1][0]:
+        if entry[2][int(entry[0][1])-1] != entry[1][0]:
+            possible_passwords.append(entry)
+
+    elif entry[2][int(entry[0][1])-1] == entry[1][0]:
+        if entry[2][int(entry[0][0])-1] != entry[1][0]:
+            possible_passwords.append(entry)
+
+print(len(possible_passwords))
