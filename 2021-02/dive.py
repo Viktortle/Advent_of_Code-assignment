@@ -5,13 +5,15 @@ def instructions():
 instructions_list = instructions()
 depth = 0
 distance = 0
+aim = 0
 
 for instruction in instructions_list:
     if instruction[0] == "forward":
         distance += int(instruction[1])
+        depth += aim*int(instruction[1])
     elif instruction[0] == "down":
-        depth += int(instruction[1])
+        aim += int(instruction[1])
     elif instruction[0] == "up":
-        depth -= int(instruction[1])
+        aim -= int(instruction[1])
 else:
     print(depth*distance)
