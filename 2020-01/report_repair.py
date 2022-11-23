@@ -8,4 +8,9 @@ for entry in report:
     for comparison in report:
         if entry + comparison == 2020:
             print(entry*comparison)
-            break
+
+for entry in report:
+    for comparison in report:
+        for item in report:
+            if entry + comparison + item == 2020:
+                print(entry*comparison*item)
